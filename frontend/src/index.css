@@ -1,0 +1,269 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --radius: 0.5rem;
+  --background: oklch(0.99 0.003 276.126);
+  --foreground: oklch(0.132 0.038 266.834);
+  --muted: oklch(0.859 0.033 275.627);
+  --muted-foreground: oklch(0.486 0.033 275.191);
+  --popover: oklch(0.99 0.003 276.126);
+  --popover-foreground: oklch(0.132 0.038 266.834);
+  --card: oklch(0.98 0.006 276.086);
+  --card-foreground: oklch(0.121 0.032 266.119);
+  --border: oklch(0.921 0.003 276.125);
+  --input: oklch(0.921 0.003 276.125);
+  --primary: oklch(0.46 0.18 268.518);
+  --primary-foreground: oklch(1 0 180);
+  --secondary: oklch(0.924 0.01 276.027);
+  --secondary-foreground: oklch(0.398 0.042 274.532);
+  --accent: oklch(0.84 0.028 275.716);
+  --accent-foreground: oklch(0.311 0.044 273.911);
+  --destructive: oklch(0.399 0.133 37.091);
+  --destructive-foreground: oklch(0.874 0.07 40.905);
+  --ring: oklch(0.46 0.18 268.518);
+  --chart-1: oklch(0.46 0.18 268.518);
+  --chart-2: oklch(0.924 0.01 276.027);
+  --chart-3: oklch(0.84 0.028 275.716);
+  --chart-4: oklch(0.949 0.006 276.077);
+  --chart-5: oklch(0.458 0.188 268.052);
+  --login-bg-image:
+    radial-gradient(
+      circle at 16% 18%,
+      rgba(59, 130, 246, 0.34),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 84% 14%,
+      rgba(99, 102, 241, 0.26),
+      transparent 26%
+    ),
+    radial-gradient(
+      circle at 52% 84%,
+      rgba(56, 189, 248, 0.22),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #f6f9ff 0%,
+      #e7f0ff 46%,
+      #dbeaff 100%
+    );
+  --login-bg-overlay: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18),
+    transparent 34%,
+    rgba(15, 23, 42, 0.06)
+  );
+  --login-bg-orb-1: rgba(96, 165, 250, 0.18);
+  --login-bg-orb-2: rgba(129, 140, 248, 0.18);
+  --workspace-bg-image:
+    radial-gradient(circle at 12% 12%, rgba(59, 130, 246, 0.2), transparent 24%),
+    radial-gradient(circle at 86% 10%, rgba(99, 102, 241, 0.14), transparent 24%),
+    radial-gradient(circle at 52% 96%, rgba(56, 189, 248, 0.1), transparent 28%),
+    linear-gradient(180deg, #f8fbff 0%, #edf4ff 46%, #e2ecff 100%);
+  --workspace-shell-fill: rgba(255, 255, 255, 0.72);
+  --workspace-shell-stroke: rgba(255, 255, 255, 0.52);
+  --workspace-header-fill: rgba(248, 251, 255, 0.84);
+  --workspace-main-fill: rgba(246, 249, 255, 0.62);
+  --workspace-panel-fill: rgba(255, 255, 255, 0.8);
+  --workspace-panel-soft-fill: rgba(248, 251, 255, 0.72);
+  --workspace-dock-fill: rgba(255, 255, 255, 0.74);
+}
+
+.dark {
+  --radius: 0.5rem;
+  --background: oklch(0 0 0);
+  --foreground: oklch(0.975 0.003 276.12);
+  --muted: oklch(0.239 0.046 272.866);
+  --muted-foreground: oklch(0.66 0.03 275.526);
+  --popover: oklch(0 0 0);
+  --popover-foreground: oklch(0.975 0.003 276.12);
+  --card: oklch(0.092 0 180);
+  --card-foreground: oklch(0.983 0.002 276.136);
+  --border: oklch(0.234 0.005 275.888);
+  --input: oklch(0.234 0.005 275.888);
+  --primary: oklch(0.46 0.18 268.518);
+  --primary-foreground: oklch(1 0 180);
+  --secondary: oklch(0.225 0.017 275.068);
+  --secondary-foreground: oklch(0.76 0.029 275.642);
+  --accent: oklch(0.286 0.035 274.21);
+  --accent-foreground: oklch(0.815 0.03 275.658);
+  --destructive: oklch(0.673 0.216 37.168);
+  --destructive-foreground: oklch(1 0 180);
+  --ring: oklch(0.46 0.18 268.518);
+  --chart-1: oklch(0.46 0.18 268.518);
+  --chart-2: oklch(0.225 0.017 275.068);
+  --chart-3: oklch(0.286 0.035 274.21);
+  --chart-4: oklch(0.255 0.02 274.979);
+  --chart-5: oklch(0.458 0.188 268.052);
+  --login-bg-image:
+    radial-gradient(
+      circle at 18% 18%,
+      rgba(59, 130, 246, 0.28),
+      transparent 29%
+    ),
+    radial-gradient(
+      circle at 82% 16%,
+      rgba(99, 102, 241, 0.24),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 50% 82%,
+      rgba(56, 189, 248, 0.18),
+      transparent 36%
+    ),
+    linear-gradient(
+      180deg,
+      #030712 0%,
+      #0f1b3d 58%,
+      #132754 100%
+    );
+  --login-bg-overlay: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    transparent 36%,
+    rgba(2, 6, 23, 0.16)
+  );
+  --login-bg-orb-1: rgba(59, 130, 246, 0.2);
+  --login-bg-orb-2: rgba(99, 102, 241, 0.18);
+  --workspace-bg-image:
+    radial-gradient(circle at 14% 14%, rgba(59, 130, 246, 0.16), transparent 24%),
+    radial-gradient(circle at 84% 12%, rgba(99, 102, 241, 0.14), transparent 24%),
+    radial-gradient(circle at 50% 94%, rgba(56, 189, 248, 0.08), transparent 28%),
+    linear-gradient(180deg, #020817 0%, #0d1833 52%, #13234a 100%);
+  --workspace-shell-fill: rgba(8, 15, 31, 0.78);
+  --workspace-shell-stroke: rgba(148, 163, 184, 0.16);
+  --workspace-header-fill: rgba(8, 15, 31, 0.72);
+  --workspace-main-fill: rgba(2, 6, 23, 0.28);
+  --workspace-panel-fill: rgba(10, 18, 38, 0.74);
+  --workspace-panel-soft-fill: rgba(10, 18, 38, 0.62);
+  --workspace-dock-fill: rgba(8, 15, 31, 0.74);
+}
+@theme inline {
+  --font-sans:
+    "SF Pro Display", "SF Pro Text", "PingFang SC", "Hiragino Sans GB",
+    "Inter Variable", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.68);
+  --radius-md: calc(var(--radius) * 0.88);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.24);
+  --radius-2xl: calc(var(--radius) * 1.48);
+  --radius-3xl: calc(var(--radius) * 1.72);
+  --radius-4xl: calc(var(--radius) * 1.96);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans antialiased;
+    font-size: 14px;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      "rlig" 1,
+      "calt" 1,
+      "ss01" 1;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-primary) 24%, white);
+  }
+}
+
+@layer components {
+  .workspace-root {
+    background-color: var(--color-background);
+    background-image: var(--workspace-bg-image);
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .workspace-shell {
+    background: var(--workspace-shell-fill);
+    border-color: var(--workspace-shell-stroke);
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+  }
+
+  .workspace-header {
+    background: var(--workspace-header-fill);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  }
+
+  .workspace-main {
+    background: var(--workspace-main-fill);
+  }
+
+  .workspace-panel {
+    background: var(--workspace-panel-fill);
+  }
+
+  .workspace-panel-soft {
+    background: var(--workspace-panel-soft-fill);
+  }
+
+  .workspace-search {
+    background: var(--workspace-panel-soft-fill);
+  }
+
+  .workspace-dock {
+    background: var(--workspace-dock-fill);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
